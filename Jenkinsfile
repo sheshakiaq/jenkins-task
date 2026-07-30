@@ -28,6 +28,10 @@ pipeline{
   }
   
   post{
+    always{
+      archiveArtifacts artifacts:'index.html',
+      fingerprint:true
+    }
     success{
       echo 'Build Done'
     }
